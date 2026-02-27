@@ -28,7 +28,7 @@ export default function Header(data: any){
           priority
         />
 
-        <button aria-label="Menu" className="pl-2" onClick={() => setIsOpen(true)}>
+        <button aria-label="Menu" className="pl-2 mr-4" onClick={() => setIsOpen(true)}>
           <Image
             src={data.hamBurgerIcon}
             alt="Menu"
@@ -41,7 +41,7 @@ export default function Header(data: any){
       </div>
 
       {/* CENTER: Main Navigation */}
-      <nav aria-label="Main Navigation" className="ml-10">
+      <nav aria-label="Main Navigation" className="ml-10 max-[845px]:hidden">
         <ul className="flex gap-8 items-center">
           {data.navItems.map((item : any) => (
             <li key={item.text}>
@@ -57,7 +57,7 @@ export default function Header(data: any){
       </nav>
 
       {/* RIGHT: Utility Section */}
-      <div className="ml-auto flex items-center gap-6">
+      <div className="ml-auto flex items-center gap-6 max-[600px]:hidden">
         {/* Quick Top Up */}
         <button
           className="bg-blue-600 text-white text-sm font-medium px-4 py-2 rounded-md hover:bg-blue-700 transition"
