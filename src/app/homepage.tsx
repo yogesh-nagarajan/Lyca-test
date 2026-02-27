@@ -15,6 +15,7 @@ import Footer from "../../components/global/footer";
 export default function HomePage({ dataPage }: any) {
   const [isOpen, setIsOpen] = useState(true);
 
+  console.log("Data Fetched from AEM: ", dataPage);
   return (
     <>
       <Header {...dataPage.header} />
