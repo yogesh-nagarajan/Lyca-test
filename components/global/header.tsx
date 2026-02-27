@@ -95,7 +95,7 @@ export default function Header(data: any){
         />
 
         {/* Language */}
-        <div className="flex items-center gap-2 cursor-pointer text-sm font-medium">
+        <div className="flex items-center gap-2 cursor-pointer text-sm font-medium text-black">
           <span>{data.language}</span>
           <Image
             src={`${process.env.NEXT_PUBLIC_AEM_HOST}${data.flag._dynamicUrl}`}
