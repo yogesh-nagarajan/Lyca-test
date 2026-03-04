@@ -14,7 +14,11 @@ export async function getAdobeAccessToken(): Promise<string> {
     return cachedToken;
   }
 
-  const privateKey = fs.readFileSync("auth/private.key");
+  const privateKey = process.env.AEM_PRIVATE_KEY
+  ?.replace(/\\r\\n/g, "\n")
+  .replace(/\\n/g, "\n") as string;
+
+  console.log("Private Key Loaded:", privateKey);
 
   const payload = {
     iss: process.env.AEM_ORG_ID as string,
