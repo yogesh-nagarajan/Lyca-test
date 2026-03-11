@@ -18,8 +18,6 @@ export async function getAdobeAccessToken(): Promise<string> {
   ?.replace(/\\r\\n/g, "\n")
   .replace(/\\n/g, "\n") as string;
 
-  console.log("Private Key Loaded:", privateKey);
-
   const payload = {
     iss: process.env.AEM_ORG_ID as string,
     sub: process.env.AEM_TECH_ACCOUNT_ID as string,
