@@ -70,8 +70,14 @@ export default function Carousel({
     }
   }, [transition]);
 
-  const nextSlide = () => setCurrent((prev) => prev + 1);
-  const prevSlide = () => setCurrent((prev) => prev - 1);
+  const nextSlide = () => {
+    if (current === slides.length - 1) return;
+    setCurrent((prev) => prev + 1)
+  };
+  const prevSlide = () => {
+    if (current === 0) return;
+    setCurrent((prev) => prev - 1)
+  };
 
   return (
     <div
@@ -82,9 +88,8 @@ export default function Carousel({
       {/* Slides */}
       <div
         ref={sliderRef}
-        className={`flex ${
-          transition ? "transition-transform duration-700 ease-in-out" : ""
-        }`}
+        className={`flex ${transition ? "transition-transform duration-700 ease-in-out" : ""
+          }`}
         style={{ transform: `translateX(-${current * 100}%)` }}
       >
         {slides.map((image: any, index: number) => (
