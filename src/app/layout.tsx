@@ -10,7 +10,6 @@ export default function RootLayout({
     <html lang="en">
       <head>
 
-        {/* Pre-hiding snippet */}
         <Script id="adobe-prehide" strategy="beforeInteractive">
           {`
             (function(d){
@@ -27,7 +26,6 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Adobe Launch */}
         <Script
           src="https://assets.adobedtm.com/4fa03d1212c6/aff5f8797720/launch-068785ad451b-development.min.js"
           strategy="beforeInteractive"
@@ -35,9 +33,7 @@ export default function RootLayout({
 
       </head>
 
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
