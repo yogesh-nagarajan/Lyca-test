@@ -29,7 +29,7 @@ export default function RootLayout({
 
         {/* Adobe Launch */}
         <Script
-          src="https://assets.adobedtm.com/4fa03d1212c6/1bcc82a1f2a7/launch-92730bc39d65-development.min.js"
+          src="https://assets.adobedtm.com/4fa03d1212c6/aff5f8797720/launch-068785ad451b-development.min.js"
           strategy="beforeInteractive"
         />
 
