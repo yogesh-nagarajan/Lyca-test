@@ -10,7 +10,7 @@ export default function StartJoin({ data }: any) {
       <div className="max-w-6xl mx-auto text-center px-4">
 
         {/* Title */}
-        <h2 className="text-4xl font-semibold mb-4">
+        <h2 className="text-4xl font-semibold mb-4" id="startjointitle">
           {data.title}
         </h2>
 
