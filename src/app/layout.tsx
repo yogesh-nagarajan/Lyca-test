@@ -11,19 +11,21 @@ export default function RootLayout({
       <head>
 
         <Script id="adobe-prehide" strategy="beforeInteractive">
-          {`
-            (function(d){
-              var style = d.createElement('style');
-              style.id = 'at-body-style';
-              style.innerHTML = 'body{opacity:0!important}';
-              d.head.appendChild(style);
+        {`
+        (function(d){
+          var style = d.createElement('style');
+          style.id = 'at-body-style';
+          style.innerHTML = 'body{opacity:0!important}';
+          d.head.appendChild(style);
 
-              setTimeout(function(){
-                var el = d.getElementById('at-body-style');
-                if(el) el.remove();
-              }, 3000);
-            })(document);
-          `}
+          window.removeATStyle = function() {
+            var el = d.getElementById('at-body-style');
+            if(el) el.remove();
+          };
+
+          setTimeout(window.removeATStyle, 3000);
+        })(document);
+        `}
         </Script>
 
         <Script
