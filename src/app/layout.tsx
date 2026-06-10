@@ -93,27 +93,27 @@ export default function RootLayout({
           window.digitalData = {
             page: {
               pageName: "Home Page",
-              category: "Electronics",
+              category: "SIM - Electronics",
               language: "en"
             },
 
             user: {
-              loginStatus: "logged-in",
+              loginStatus: "logged-out",
               customerId: "CUST-1001"
-            },
-
-            product: {
-              sku: "SKU-999",
-              name: "Gaming Laptop",
-              price: "1200"
             }
           };
-
-          console.log("[Target] Digital Data:", window.digitalData);
         `}
         </Script>
-
-
+        <Script id="target-page-params" strategy="beforeInteractive">
+        {`
+          window.targetPageParams = function() {
+            return {
+              pageName: document.title,
+              siteSection: "products"
+            };
+          };
+        `}
+        </Script>
 
 
         {/* Adobe Launch */}
