@@ -109,7 +109,7 @@ export default function RootLayout({
           window.targetPageParams = function() {
             return {
               pageName: document.title,
-              siteSection: "Yogesh - products"
+              siteSection: "Yogesh - products -cdsfd"
             };
           };
         `}
